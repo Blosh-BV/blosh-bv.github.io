@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>BLoSH B.V.</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            /* background: #CBE4DE; */
+            /* color: 2C3333; */
+            font-size: 14pt;
+        }
+
+        h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 40pt;
+            padding: 15px;
+        }
+
+        div {
+            font-family: sans-serif;
+        }
+
+        ul {
+            padding: 20px;
+            font-family: sans-serif;
+        }
+
+        body {
+            display: grid;
+            grid-template-areas:
+                "header header header"
+                "nav article ads"
+                "footer footer footer";
+            grid-template-rows: 100px 1fr 120px;
+            grid-template-columns: 18% 1fr 18%;
+            grid-gap: 10px;
+            height: 100vh;
+            margin: 0;
+        }
+
+        header,
+        footer,
+        article,
+        nav,
+        div {
+            padding: 15px;
+            /* background: gold; */
+        }
+
+        #pageHeader {
+            grid-area: header;
+        }
+
+        #pageFooter {
+            grid-area: footer;
+        }
+
+        #mainArticle {
+            grid-area: article;
+            background-image: linear-gradient(95.2deg, rgba(173, 252, 234, 1) 26.8%, rgba(192, 229, 246, 1) 64%);
+        }
+
+        #mainNav {
+            grid-area: nav;
+        }
+
+        #siteAds {
+            grid-area: ads;
+        }
+    </style>
+
+<body>
+    <header id="pageHeader"></header>
+    <article id="mainArticle">
+        <h1>BLoSH B.V. - Algo-driven Market Maker</h1>
+
+        <div>
+            We are algo trading market makers in the dynamic world of Crypto markets.
+            At the core of our trading algorithms lies the power of <b>Rust</b>,
+            a safe language that facilitates blazingly-fast computations.
+            To derive deeper insights and analyze the market data we collect,
+            we leverage the flexibility and versatility of <b>Python</b>.
+            Our preferred database system is <b>Postgres</b>, ensuring robust scalability for our trading strategies.
+            <br /><br />
+            Our team has experience in the field of low-latency trading,
+            algorithmic trading, and proprietary trading strategies.
+            We understand the importance of reacting quickly to changing market conditions,
+            and have algorithms to achieve lightning-fast execution speeds.
+            <br /><br />
+            We are actively seeking talented developers to join our expanding team.
+            We are specifically searching for dynamic individuals with extensive experience in low latency trading,
+            networking, data analysis, or telecom.
+            If you possess a specific skill or have experience in a another niche that applies well to automated low-latency trading we definitely encourage you to contact us.
+        </div>
+
+        <div>
+            BLoSH B.V. <br />
+            KVK: 89154320<br />
+            info@bloshtrading.com<br />
+            <br />
+            Weesperstraat 61-105 <br />
+            Amsterdam 1018VN <br />
+            Netherlands
+        </div>
+    </article>
+    <nav id="mainNav"></nav>
+    <div id="siteAds"></div>
+    <footer id="pageFooter"></footer>
+</body>
