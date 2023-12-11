@@ -1,109 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>BLoSH B.V.</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-
-    <style>
-        body {
-            /* background: #CBE4DE; */
-            /* color: 2C3333; */
-            font-size: 14pt;
-        }
-
-        h1 {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 40pt;
-            padding: 15px;
-        }
-
-        div {
-            font-family: sans-serif;
-        }
-
-        ul {
-            padding: 20px;
-            font-family: sans-serif;
-        }
-
-        body {
-            display: grid;
-            grid-template-areas:
-                "header header header"
-                "nav article ads"
-                "footer footer footer";
-            grid-template-rows: 100px 1fr 120px;
-            grid-template-columns: 18% 1fr 18%;
-            grid-gap: 10px;
-            height: 100vh;
-            margin: 0;
-        }
-
-        header,
-        footer,
-        article,
-        nav,
-        div {
-            padding: 15px;
-            /* background: gold; */
-        }
-
-        #pageHeader {
-            grid-area: header;
-        }
-
-        #pageFooter {
-            grid-area: footer;
-        }
-
-        #mainArticle {
-            grid-area: article;
-            background-image: linear-gradient(95.2deg, rgba(173, 252, 234, 1) 26.8%, rgba(192, 229, 246, 1) 64%);
-        }
-
-        #mainNav {
-            grid-area: nav;
-        }
-
-        #siteAds {
-            grid-area: ads;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLoSH</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
 
 <body>
-    <header id="pageHeader"></header>
-    <article id="mainArticle">
-        <h1>BLoSH B.V. - Algo-driven Market Maker</h1>
+    <div class="container">
+        <header>
+            <h1>BLoSH</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
 
-        <div>
-            We are algo trading market makers in the dynamic world of Crypto markets.
-            <br /><br />
-            Our team has experience in the field of low-latency trading,
-            algorithmic trading, and proprietary trading strategies.
-            We understand the importance of reacting quickly to changing market conditions,
-            and have algorithms to achieve lightning-fast execution speeds.
-            <br /><br />
-            We are actively seeking talented developers to join our expanding team.
-            We are specifically searching for dynamic individuals with extensive experience in low latency trading,
-            networking, data analysis, or telecom.
-            If you possess a specific skill or have experience in a another niche that applies well to automated low-latency trading we definitely encourage you to contact us.
-        </div>
+        <main>
+            <section id="about">
+                <h2>About Us</h2>
+                <p>BLoSH is a proprietary trading funds, trading millions worth of euros every day. We use a completely inhouse built state of the art trading stack. Founded and located in the Thriving Amsterdam, in no other place than the East-As.</p>
+            </section>
 
-        <div>
-            BLoSH B.V. <br />
-            KVK: 89154320<br />
-            info@bloshtrading.com<br />
-            <br />
-            Weesperstraat 61<br />
-            Amsterdam 1018VN <br />
-            Netherlands
-        </div>
-    </article>
-    <nav id="mainNav"></nav>
-    <div id="siteAds"></div>
-    <footer id="pageFooter"></footer>
+            <section id="contact">
+                <h2>Contact</h2>
+                <p>Reach out to us:</p>
+                <p>Email: info@bloshtrading.copm</p>
+                <p>KvK: 189154320</p>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2023 BLoSH</p>
+        </footer>
+    </div>
 </body>
+
+</html>
