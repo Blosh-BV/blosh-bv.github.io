@@ -1,5 +1,8 @@
 body {
-    font-family: 'Press Start 2P', cursive;
+    --bull: #9df7df;
+    --bear: #ff6b81;
+    --panel-line: rgba(157, 247, 223, 0.08);
+    font-family: "Press Start 2P", cursive;
     background-color: #000;
     color: #fff;
     margin: 0;
@@ -19,7 +22,10 @@ header {
 }
 
 header h1 {
+    margin: 0 0 18px;
     font-size: 40px;
+    line-height: 1.15;
+    text-shadow: 0 0 8px rgba(157, 247, 223, 0.12);
 }
 
 nav ul {
@@ -37,16 +43,19 @@ nav ul li {
 }
 
 nav ul li a {
+    display: inline-block;
     color: #fff;
     text-decoration: none;
+    padding-bottom: 3px;
+    border-bottom: 1px solid transparent;
 }
 
 nav ul li a.active {
-    text-decoration: underline;
+    border-bottom-color: #fff;
 }
 
 nav ul li a:hover {
-    text-decoration: underline;
+    border-bottom-color: #fff;
 }
 
 main {
@@ -62,7 +71,8 @@ section {
 }
 
 p {
-    line-height: 1.8;
+    max-width: 68ch;
+    line-height: 2;
 }
 
 h2 {
@@ -73,12 +83,20 @@ h2 {
 }
 
 .vacancy-list {
-    border-top: 1px solid #fff;
+    border-top: 1px solid rgba(255, 255, 255, 0.75);
     margin-top: 30px;
 }
 
 .company-description {
+    max-width: 66ch;
     margin-top: 24px;
+    padding: 16px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background:
+        linear-gradient(rgba(157, 247, 223, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(157, 247, 223, 0.03) 1px, transparent 1px),
+        rgba(255, 255, 255, 0.03);
+    background-size: 16px 16px, 16px 16px, auto;
 }
 
 .company-description h3 {
@@ -88,22 +106,36 @@ h2 {
 
 .company-description p {
     font-size: 12px;
-    margin: 0 0 14px;
+    margin: 0 0 16px;
+    color: #e8e8e8;
+    line-height: 2.05;
+}
+
+.company-description p:last-child {
+    margin-bottom: 0;
 }
 
 .vacancy-item {
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.75);
 }
 
 .vacancy-item details {
-    padding: 18px 0;
+    padding: 20px 0;
+    transition: background-color 140ms ease;
+}
+
+.vacancy-item details:hover {
+    background: linear-gradient(90deg, rgba(157, 247, 223, 0.03), transparent 65%);
 }
 
 .vacancy-item summary {
-    font-size: 18px;
-    line-height: 1.5;
+    position: relative;
+    padding-left: 22px;
+    font-size: 17px;
+    line-height: 1.6;
     cursor: pointer;
     list-style: none;
+    transition: color 140ms ease, text-shadow 140ms ease;
 }
 
 .vacancy-item summary::-webkit-details-marker {
@@ -111,40 +143,104 @@ h2 {
 }
 
 .vacancy-item summary::before {
-    content: "+ ";
+    content: "+";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--bull);
+    text-shadow: 0 0 8px rgba(157, 247, 223, 0.25);
 }
 
 .vacancy-item details[open] summary::before {
-    content: "- ";
+    content: "-";
+    color: var(--bear);
+    text-shadow: 0 0 8px rgba(255, 107, 129, 0.28);
+}
+
+.vacancy-item summary:hover {
+    color: var(--bull);
+}
+
+.vacancy-item details[open] summary {
+    color: #fff;
+    text-shadow: 0 0 7px rgba(255, 107, 129, 0.16);
 }
 
 .vacancy-content {
-    margin-top: 16px;
+    position: relative;
+    max-width: 64ch;
+    margin-top: 18px;
+    padding: 16px 0 4px 20px;
+    border-left: 1px solid rgba(157, 247, 223, 0.45);
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.035), transparent 80%);
+}
+
+.vacancy-content::before {
+    content: "";
+    position: absolute;
+    left: -1px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(180deg, var(--bull) 0%, rgba(157, 247, 223, 0.85) 55%, var(--bear) 100%);
+}
+
+.vacancy-item details[open] .vacancy-content {
+    background:
+        linear-gradient(90deg, rgba(157, 247, 223, 0.06), rgba(255, 107, 129, 0.03) 60%, transparent 88%);
 }
 
 .vacancy-content h4 {
-    font-size: 14px;
-    margin: 20px 0 10px;
+    display: inline-block;
+    font-size: 13px;
+    margin: 24px 0 14px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(157, 247, 223, 0.3);
+    color: var(--bull);
+    line-height: 1.7;
 }
 
 .vacancy-content h4:first-child {
     margin-top: 0;
 }
 
+.vacancy-content p + p {
+    margin-top: 14px;
+}
+
 .vacancy-item p {
-    margin: 0 0 14px;
+    margin: 0 0 18px;
     font-size: 12px;
+    color: #ececec;
+    line-height: 2.1;
+}
+
+.vacancy-item a {
+    color: var(--bull);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.85);
+}
+
+.vacancy-item a:hover {
+    color: #fff;
+    border-bottom-color: rgba(255, 255, 255, 0.95);
 }
 
 .vacancy-item ul {
-    margin: 0 0 14px 20px;
-    padding: 0;
+    margin: 4px 0 18px 18px;
+    padding-left: 8px;
 }
 
 .vacancy-item li {
     font-size: 12px;
-    line-height: 1.8;
-    margin-bottom: 8px;
+    line-height: 2.1;
+    margin-bottom: 12px;
+    padding-left: 4px;
+    color: #e5e5e5;
+}
+
+.vacancy-item li::marker {
+    color: var(--bull);
 }
 
 footer {
@@ -156,6 +252,7 @@ footer {
     padding: 10px 0;
     font-size: 12px;
 }
+
 .pong-container {
     display: flex;
     justify-content: center;
@@ -181,9 +278,18 @@ footer {
         font-size: 22px;
     }
 
+    .company-description {
+        padding: 14px;
+    }
+
     .company-description h3,
     .vacancy-item summary {
         font-size: 14px;
+    }
+
+    .vacancy-content {
+        max-width: 100%;
+        padding-left: 14px;
     }
 
     .vacancy-content h4 {
