@@ -4,6 +4,7 @@ body {
     color: #fff;
     margin: 0;
     padding: 0;
+    padding-bottom: 70px;
 }
 
 .container {
@@ -24,16 +25,24 @@ header h1 {
 nav ul {
     list-style: none;
     padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px 20px;
 }
 
 nav ul li {
-    display: inline;
-    margin-right: 20px;
+    display: block;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
+}
+
+nav ul li a.active {
+    text-decoration: underline;
 }
 
 nav ul li a:hover {
@@ -48,11 +57,94 @@ section {
     margin-bottom: 40px;
 }
 
+.tab-panel[hidden] {
+    display: none;
+}
+
+p {
+    line-height: 1.8;
+}
+
 h2 {
     font-size: 30px;
     border-bottom: 1px solid #fff;
     padding-bottom: 5px;
     margin-bottom: 20px;
+}
+
+.vacancy-list {
+    border-top: 1px solid #fff;
+    margin-top: 30px;
+}
+
+.company-description {
+    margin-top: 24px;
+}
+
+.company-description h3 {
+    font-size: 18px;
+    margin: 0 0 16px;
+}
+
+.company-description p {
+    font-size: 12px;
+    margin: 0 0 14px;
+}
+
+.vacancy-item {
+    border-bottom: 1px solid #fff;
+}
+
+.vacancy-item details {
+    padding: 18px 0;
+}
+
+.vacancy-item summary {
+    font-size: 18px;
+    line-height: 1.5;
+    cursor: pointer;
+    list-style: none;
+}
+
+.vacancy-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.vacancy-item summary::before {
+    content: "+ ";
+}
+
+.vacancy-item details[open] summary::before {
+    content: "- ";
+}
+
+.vacancy-content {
+    margin-top: 16px;
+}
+
+.vacancy-content h4 {
+    font-size: 14px;
+    margin: 20px 0 10px;
+}
+
+.vacancy-content h4:first-child {
+    margin-top: 0;
+}
+
+.vacancy-item p {
+    margin: 0 0 14px;
+    font-size: 12px;
+}
+
+.vacancy-item ul {
+    margin: 0 0 14px 20px;
+    padding: 0;
+}
+
+.vacancy-item li {
+    font-size: 12px;
+    line-height: 1.8;
+    margin-bottom: 8px;
 }
 
 footer {
@@ -68,5 +160,33 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 30px; /* Adjust as needed */
+    margin-top: 30px;
+}
+
+#pongGame {
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 16px;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    .company-description h3,
+    .vacancy-item summary {
+        font-size: 14px;
+    }
+
+    .vacancy-content h4 {
+        font-size: 12px;
+    }
 }
